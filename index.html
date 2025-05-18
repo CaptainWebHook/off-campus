@@ -5,74 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Off Campus – Das Magazin</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Patrick+Hand+SC&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>OFF CAMPUS</h1>
-      <p class="subline">Das Magazin für alle, die nicht dazugehören wollen.</p>
-      <button class="cta-button">Erste Ausgabe lesen</button>
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="img/OffCampusLogo.png" alt="OFF CAMPUS" class="logo" />
+        </div>
+        <p class="subline">
+          DAS MAGAZIN FÜR ALLE, DIE<br />NICHT DAZU GEHÖREN WOLLEN.
+        </p>
+        <div class="cta-container">
+          <button class="cta-button" style="color: #000000 !important">
+            ERSTE AUSGABE LESEN
+          </button>
+        </div>
+      </div>
     </header>
 
     <section class="about section-dark">
       <div class="about-text">
-        <h2 class="about-heading">REBELLISCH. UNABHÄNGIG. STUDENTISCH</h2>
+        <h2 class="about-heading">
+          REBELLISCH.<br />UNABHÄNGIG.<br />STUDENTISCH.
+        </h2>
         <p>
-          Wir sind ein DIY-Magazin, das den Campus aufwirbelt und neue
-          Perspektiven eröffnet.
+          Wir sind ein DIY-Magazin,<br />
+          das den Campus aufwirbelt<br />
+          und neue Perspektiven<br />
+          eröffnet.
         </p>
       </div>
-      <div>
-        <img src="about-art.png" alt="Scribble" class="responsive-img" />
+      <div class="article-preview">
+        <div class="scribble-box"></div>
+        <h3>TITEL DES ARTIKELS</h3>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line shorter"></div>
       </div>
     </section>
 
-    <section class="section-grey">
-      <h2 class="highlight-title">HIGHLIGHTS DER ERSTEN AUSGABE</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>TITEL DES ARTIKELS</h3>
-          <p>Kurzer Teasertext</p>
-        </div>
-        <div class="card">
-          <h3>TITEL DES ARTIKELS</h3>
-          <p>Kurzer Teasertext</p>
-        </div>
-        <div class="card">
-          <h3>TITEL DES ARTIKELS</h3>
-          <p>Kurzer Teasertext</p>
+    <section class="highlights-section">
+      <div class="highlights-content">
+        <h2 class="highlight-title">HIGHLIGHTS DER ERSTEN AUSGABE</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="scribble-box"></div>
+            <h3>TITEL DES ARTIKELS</h3>
+            <div class="line"></div>
+            <div class="line short"></div>
+          </div>
+          <div class="card">
+            <div class="scribble-box"></div>
+            <h3>TITEL DES ARTIKELS</h3>
+            <div class="line"></div>
+            <div class="line short"></div>
+          </div>
+          <div class="card">
+            <div class="scribble-box"></div>
+            <h3>TITEL DES ARTIKELS</h3>
+            <div class="line"></div>
+            <div class="line short"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="team section-dark">
-      <div>
-        <img src="team-pic.png" alt="Crew" class="responsive-img" />
-        <p>
-          "Ich dachte, wir machen was Kleines… jetzt machen wir OFF CAMPUS."
+      <div class="team-info">
+        <div class="team-image-container">
+          <div class="team-image"></div>
+        </div>
+        <p class="team-quote">
+          "Ich dachte,<br />
+          wir machen<br />
+          was Kleines...<br />
+          jetzt machen<br />
+          wir OFF<br />
+          CAMPUS."
         </p>
       </div>
       <div class="newsletter">
-        <h2 class="newsletter-heading">DAS TEAM</h2>
+        <h2 class="team-heading">DAS TEAM</h2>
         <p class="newsletter-text">
-          Bleib im Untergrund – wir sagen dir, wenn was passiert
+          BLEIB IM UNTERGRUND –<br />
+          WIR SAGEN DIR, WENN<br />
+          WAS PASSIERT
         </p>
-        <input type="email" placeholder="E-Mail eingeben" />
-        <button>Anmelden</button>
+        <div class="input-row">
+          <div class="social-icons">
+            <div class="icon-circle"></div>
+            <div class="icon-circle"></div>
+          </div>
+          <div class="newsletter-box"></div>
+          <button class="signup-button" style="color: #000000 !important">
+            ANMELDEN
+          </button>
+        </div>
       </div>
     </section>
 
     <footer>
-      Made auf einem kaputten Campus irgendwo in Deutschland.<br />
-      <a href="#" class="footer-link">Impressum</a> |
-      <a href="#" class="footer-link">Datenschutz</a>
+      <div class="footer-content">
+        Made auf einem kaputten Campus irgendwo in Deutschland.<br />
+        <a href="#" class="footer-link">Impressum</a> |
+        <a href="#" class="footer-link">Datenschutz</a>
+      </div>
     </footer>
 
     <script src="script.js"></script>

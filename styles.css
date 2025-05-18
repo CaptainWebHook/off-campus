@@ -1,129 +1,551 @@
+/* Grundlegende Einstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
   background-color: #000;
-  color: #f2f2f2;
+  color: #fff;
   font-family: "Inter", sans-serif;
+  line-height: 1.6;
 }
 
+/* Korrigierte Farbcodes und einheitliches Padding */
+:root {
+  --neon-pink: #ff2aa8; /* Korrekter Farbcode für Pink */
+  --neon-green: #8cff00; /* Korrekter Farbcode für Grün */
+  --dark-bg: #000;
+  --gray-bg: #252525; /* Dieses Grau wird jetzt überall konsistent verwendet */
+  --gray: #999;
+  --section-max-width: 1200px;
+  --section-padding: 3rem 2rem; /* Einheitliches, reduziertes Padding für alle Sektionen */
+}
+
+/* Header */
 header {
-  background: url("campus-sketch.jpg") center/cover no-repeat;
-  text-align: center;
-  padding: 6rem 1rem;
+  background-image: url("img/campus-sketch.png");
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  width: 100%;
+  padding: var(--section-padding);
+  min-height: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: none;
+  border-bottom: 1px solid #222;
 }
 
-h1 {
-  font-family: "Permanent Marker", cursive;
-  color: #ff2aa8;
-  font-size: 4rem;
-  margin: 0;
+/* Header-Inhalt */
+.header-content {
+  max-width: var(--section-max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Kein zusätzliches Padding */
+}
+
+.logo-container {
+  max-width: 85%; /* Etwas kleiner */
+  margin: 0 auto 0.75rem; /* Weniger Abstand */
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo-Effekt */
+@keyframes logoPulse {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: none;
+  animation: logoPulse 3s ease-in-out infinite;
 }
 
 .subline {
-  font-size: 1.25rem;
-  margin: 1rem 0;
+  font-family: "Patrick Hand SC", sans-serif;
+  font-size: 1.8rem;
+  margin: 0.75rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 5px 0;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  background-color: transparent;
+  padding: 5px 0;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-button {
-  background: #8cff00;
-  color: #000;
-  padding: 1rem 2rem;
-  border: none;
+  background-color: var(--neon-green);
+  color: #000000 !important; /* Wichtige Regel für schwarze Schrift */
   font-weight: bold;
-  font-size: 1rem;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+  font-family: "Patrick Hand SC", cursive;
+  border-radius: 8px;
+  box-shadow: none !important; /* Wichtige Regel um Leuchten zu deaktivieren */
 }
 
 .cta-button:hover {
-  background: #000;
-  color: #8cff00;
-  border: 2px solid #8cff00;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(140, 255, 0, 0.5) !important;
 }
 
-section {
-  padding: 4rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.highlight-title {
-  font-size: 2rem;
-  color: #ff2aa8;
-  margin-bottom: 2rem;
-}
-
-.about,
-.team {
+/* About-Sektion */
+.section-dark {
+  background-color: var(--dark-bg);
+  padding: var(--section-padding);
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
 }
 
 .about-text {
   flex: 1;
-  color: #8cff00;
+  min-width: 300px;
 }
 
 .about-heading {
   font-family: "Patrick Hand SC", cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--neon-green);
   text-transform: uppercase;
-  color: #8cff00;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+.article-preview {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scribble-box {
+  width: 100%;
+  height: 150px;
+  border: 2px solid var(--gray);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.scribble-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--gray);
+  box-shadow: 0 -20px 0 var(--gray), 0 20px 0 var(--gray), 0 -40px 0 var(--gray),
+    0 40px 0 var(--gray);
+}
+
+.scribble-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/scribble.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.article-preview h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--gray);
+  margin: 5px 0;
+}
+
+.short {
+  width: 80%;
+}
+
+.shorter {
+  width: 60%;
+}
+
+/* Highlights-Sektion */
+.highlights-section {
+  background-image: url("img/grau-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #252525; /* Fallback-Farbe */
+  padding: var(--section-padding);
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.highlights-content {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+}
+
+.highlight-title {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--neon-pink);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
 }
 
 .card {
-  border: 2px solid #ff2aa8;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.newsletter input {
-  padding: 0.75rem;
+.card .scribble-box {
+  height: 120px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+}
+
+/* Team-Sektion */
+.team {
+  align-items: center;
+}
+
+.team-info {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  min-width: 300px;
+}
+
+.team-image-container {
+  flex: 1;
+  min-width: 150px;
+}
+
+.team-image {
+  width: 100%;
+  padding-bottom: 130%;
+  border: 2px solid var(--gray);
+  position: relative;
+}
+
+.team-image::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border: 2px solid var(--gray);
+}
+
+.team-image::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 60%;
-  max-width: 300px;
-  margin-right: 1rem;
-  border: none;
+  height: 2px;
+  background-color: var(--gray);
+  box-shadow: 0 10px 0 var(--gray), 0 20px 0 var(--gray), 0 30px 0 var(--gray);
 }
 
-.newsletter button {
-  background: #8cff00;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
+.team-quote {
+  flex: 1;
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: white;
+  font-style: italic;
 }
 
-.newsletter-heading,
+.newsletter {
+  flex: 1;
+  min-width: 300px;
+}
+
+.team-heading {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--neon-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .newsletter-text {
-  color: #ff2aa8;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
 }
 
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-box {
+  width: 100%;
+  height: 40px;
+  border: 2px solid var(--gray);
+  margin-bottom: 1rem;
+}
+
+.signup-button {
+  background-color: var(--neon-green);
+  color: #000000 !important; /* Wichtige Regel für schwarze Schrift */
+  font-weight: bold;
+  border: none;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: center;
+  font-family: "Patrick Hand SC", cursive;
+  border-radius: 8px;
+  box-shadow: none !important; /* Wichtige Regel um Leuchten zu deaktivieren */
+}
+
+.signup-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(140, 255, 0, 0.5) !important;
+}
+
+/* Footer */
 footer {
-  background: #1a1a1a;
-  padding: 2rem;
+  background-color: var(--dark-bg);
   text-align: center;
-  font-size: 0.85rem;
-  color: #aaa;
+  padding: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-content {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
 }
 
 .footer-link {
-  color: #8cff00;
+  color: var(--neon-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 10px;
 }
 
-.responsive-img {
-  max-width: 100%;
-  height: auto;
-}
-.section-dark {
-  background-color: #000;
+.footer-link:hover {
+  color: var(--neon-pink);
 }
 
-.section-grey {
-  background-color: #1a1a1a;
+/* Animationen */
+@keyframes textFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Elemente flackern */
+.team-heading,
+.highlight-title,
+.about-heading {
+  animation: textFlicker 5s ease-in-out infinite;
+}
+
+/* Patrick Hand SC für Überschriften */
+.about-heading,
+.highlight-title,
+.team-heading {
+  font-family: "Patrick Hand SC", cursive;
+  letter-spacing: 1px;
+}
+
+/* Inter für Fließtexte */
+p,
+.card h3,
+.team-quote,
+.newsletter-text,
+footer {
+  font-family: "Inter", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-dark,
+  .team {
+    flex-direction: column;
+  }
+
+  .about-heading,
+  .highlight-title,
+  .team-heading {
+    font-size: 2rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-image-container {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .fist-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 2rem 1rem; /* Mobile */
+  }
+
+  .subline {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+html body header .cta-container .cta-button,
+html body section .input-row .signup-button,
+.cta-button,
+.signup-button,
+button.cta-button,
+button.signup-button {
+  background-color: var(--neon-green);
+  color: #000000 !important;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Patrick Hand SC", cursive;
+  border-radius: 8px;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.cta-button *,
+.signup-button *,
+.cta-button span,
+.signup-button span {
+  color: #000000 !important;
 }
