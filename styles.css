@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background-color: #000;
+  color: #f2f2f2;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background: url("campus-sketch.jpg") center/cover no-repeat;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  color: #ff2aa8;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.subline {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  background: #8cff00;
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  background: #000;
+  color: #8cff00;
+  border: 2px solid #8cff00;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.highlight-title {
+  font-size: 2rem;
+  color: #ff2aa8;
+  margin-bottom: 2rem;
+}
+
+.about,
+.team {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  color: #8cff00;
+}
+
+.about-heading {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #8cff00;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  border: 2px solid #ff2aa8;
+  padding: 1rem;
+}
+
+.newsletter input {
+  padding: 0.75rem;
+  width: 60%;
+  max-width: 300px;
+  margin-right: 1rem;
+  border: none;
+}
+
+.newsletter button {
+  background: #8cff00;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-heading,
+.newsletter-text {
+  color: #ff2aa8;
+}
+
+footer {
+  background: #1a1a1a;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-link {
+  color: #8cff00;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+.section-dark {
+  background-color: #000;
+}
+
+.section-grey {
+  background-color: #1a1a1a;
+}
