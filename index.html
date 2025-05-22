@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Off Campus – Das Magazin</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Patrick+Hand+SC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Patrick+Hand+SC&family=Patrick+Hand&family=Knewave&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -16,93 +16,113 @@
         <div class="logo-container">
           <img src="img/OffCampusLogo.png" alt="OFF CAMPUS" class="logo" />
         </div>
-        <p class="subline">
-          DAS MAGAZIN FÜR ALLE, DIE<br />NICHT DAZU GEHÖREN WOLLEN.
-        </p>
+        <p class="subline">ON vs OFF</p>
         <div class="cta-container">
-          <button class="cta-button" style="color: #000000 !important">
-            ERSTE AUSGABE LESEN
+          <button
+            class="cta-button"
+            onclick="document.getElementById('ausgabe2').scrollIntoView({behavior: 'smooth'})"
+            style="color: #000000 !important"
+          >
+            [AUSGABE 2 BESTELLEN]
           </button>
         </div>
       </div>
     </header>
 
-    <section class="about section-dark">
-      <div class="about-text">
-        <h2 class="about-heading">
-          REBELLISCH.<br />UNABHÄNGIG.<br />STUDENTISCH.
-        </h2>
-        <p>
-          Wir sind ein DIY-Magazin,<br />
-          das den Campus aufwirbelt<br />
-          und neue Perspektiven<br />
-          eröffnet.
-        </p>
-      </div>
-      <div class="article-preview">
-        <div class="scribble-box"></div>
-        <h3>TITEL DES ARTIKELS</h3>
-        <div class="line"></div>
-        <div class="line short"></div>
-        <div class="line shorter"></div>
-      </div>
-    </section>
-
-    <section class="highlights-section">
-      <div class="highlights-content">
-        <h2 class="highlight-title">HIGHLIGHTS DER ERSTEN AUSGABE</h2>
-        <div class="card-grid">
-          <div class="card">
-            <div class="scribble-box"></div>
-            <h3>TITEL DES ARTIKELS</h3>
-            <div class="line"></div>
-            <div class="line short"></div>
+    <section class="duell-section">
+      <div class="duell-content">
+        <img
+          src="img/überschrift1.png"
+          alt="Das Duell"
+          class="duell-heading-image"
+        />
+        <div class="duell-main">
+          <div class="duell-text">
+            <p>
+              Die Mensa auf dem Campus ist geschmacklich sehr solide. Je nach
+              Gericht mal besser oder schlechter, aber insgesamt stimmt die
+              Qualität. Preislich ist sie unschlagbar und gerade für Studierende
+              ein echter Vorteil. Auch der Service ist top, da das Personal in
+              der Regel sehr freundlich und bemüht sind.
+              <br />
+              Der Campus-Döner hingegen schmeckt durchweg hervorragend und
+              überzeugt mit frischen Zutaten. Allerdings liegt er preislich
+              etwas über dem Durchschnitt, für einen Döner aber noch okay. Der
+              Service dort ist eher neutral – weder besonders herzlich noch
+              unfreundlich.
+              <br />
+              Insgesamt also: Wer sparen will und nichts gegen gelegentliche
+              Überraschungen auf dem Teller hat, ist in der Mensa gut
+              aufgehoben. Wer dagegen mal Lust auf einen guten Döner hat, der
+              geht zum Capus-Döner.
+            </p>
           </div>
-          <div class="card">
-            <div class="scribble-box"></div>
-            <h3>TITEL DES ARTIKELS</h3>
-            <div class="line"></div>
-            <div class="line short"></div>
-          </div>
-          <div class="card">
-            <div class="scribble-box"></div>
-            <h3>TITEL DES ARTIKELS</h3>
-            <div class="line"></div>
-            <div class="line short"></div>
+          <div class="duell-image">
+            <img
+              src="img/campus-vs-döner.png"
+              alt="Campus vs Döner"
+              class="duell-graphic"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="team section-dark">
-      <div class="team-info">
-        <div class="team-image-container">
-          <div class="team-image"></div>
-        </div>
-        <p class="team-quote">
-          "Ich dachte,<br />
-          wir machen<br />
-          was Kleines...<br />
-          jetzt machen<br />
-          wir OFF<br />
-          CAMPUS."
-        </p>
-      </div>
-      <div class="newsletter">
-        <h2 class="team-heading">DAS TEAM</h2>
-        <p class="newsletter-text">
-          BLEIB IM UNTERGRUND –<br />
-          WIR SAGEN DIR, WENN<br />
-          WAS PASSIERT
-        </p>
-        <div class="input-row">
-          <div class="social-icons">
-            <div class="icon-circle"></div>
-            <div class="icon-circle"></div>
+    <section class="spot-section">
+      <div class="spot-content">
+        <img
+          src="img/überschrift2.png"
+          alt="Lern-Spots"
+          class="spot-title-image"
+        />
+        <div class="spot-grid">
+          <div class="spot-item">
+            <div class="spot-image">
+              <img src="img/spot-1.png" alt="Spot 1" class="spot" />
+            </div>
+            <p class="spot-text">
+              Ein gemütliches Café in Campusnähe, ein toller Ort zum lernen und
+              seinen Koffeinspeicher aufzufüllen.
+            </p>
           </div>
-          <div class="newsletter-box"></div>
-          <button class="signup-button" style="color: #000000 !important">
-            ANMELDEN
+          <div class="spot-item">
+            <div class="spot-image">
+              <img src="img/spot-2.png" alt="Spot 2" class="spot" />
+            </div>
+            <p class="spot-text">
+              Die Ruhrpromenade bietet einen schönen Blick auf die Ruhr –
+              perfekt, um beim Lesen die Seele baumeln zu lassen.
+            </p>
+          </div>
+          <div class="spot-item">
+            <div class="spot-image">
+              <img src="img/spot-3.png" alt="Spot 3" class="spot" />
+            </div>
+            <p class="spot-text">
+              Der Campus in Duisburg ist eine gute Alternative zur HRW,
+              besonders die Bibliothek bietet viel Ruhe zum Lernen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ausgabe2" class="ausgabe2-section">
+      <div class="ausgabe2-content">
+        <h2 class="ausgabe2-heading">[HOL DIR AUSGABE 2]</h2>
+        <p class="ausgabe2-text">
+          Bestelle jetzt die 2.Ausgabe –<br />
+          Einfach E-Mail entragen<br />
+          Weitere Infos folgen
+        </p>
+        <div class="email-form">
+          <input
+            type="email"
+            class="email-input"
+            placeholder="Deine E-Mail-Adresse"
+          />
+          <button class="order-button" style="color: #000000 !important">
+            [KOSTENLOS BESTELLEN]
           </button>
         </div>
       </div>

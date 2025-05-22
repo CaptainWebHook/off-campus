@@ -1,4 +1,15 @@
-/* Grundlegende Einstellungen */
+@font-face {
+  font-family: "Paintcans";
+  src: url("fonts/paintcans.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +23,14 @@ body {
   line-height: 1.6;
 }
 
-/* Korrigierte Farbcodes und einheitliches Padding */
 :root {
-  --neon-pink: #ff2aa8; /* Korrekter Farbcode für Pink */
-  --neon-green: #8cff00; /* Korrekter Farbcode für Grün */
+  --neon-pink: #ff2aa8;
+  --neon-green: #8cff00;
   --dark-bg: #000;
-  --gray-bg: #252525; /* Dieses Grau wird jetzt überall konsistent verwendet */
+  --gray-bg: #252525;
   --gray: #999;
   --section-max-width: 1200px;
-  --section-padding: 3rem 2rem; /* Einheitliches, reduziertes Padding für alle Sektionen */
+  --section-padding: 3rem 2rem;
 }
 
 /* Header */
@@ -41,7 +51,6 @@ header {
   border-bottom: 1px solid #222;
 }
 
-/* Header-Inhalt */
 .header-content {
   max-width: var(--section-max-width);
   width: 100%;
@@ -50,12 +59,12 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Kein zusätzliches Padding */
+  padding: 0;
 }
 
 .logo-container {
-  max-width: 85%; /* Etwas kleiner */
-  margin: 0 auto 0.75rem; /* Weniger Abstand */
+  max-width: 85%;
+  margin: 0 auto 0.25rem; /* Weniger Abstand zum Logo */
   padding: 0;
   background-color: transparent;
   border-radius: 0;
@@ -63,7 +72,6 @@ header {
   z-index: 2;
 }
 
-/* Logo-Effekt */
 @keyframes logoPulse {
   0%,
   100% {
@@ -85,9 +93,9 @@ header {
 }
 
 .subline {
-  font-family: "Patrick Hand SC", sans-serif;
-  font-size: 1.8rem;
-  margin: 0.75rem auto;
+  font-family: "Paintcans", sans-serif;
+  font-size: 2.5rem;
+  margin: 0.25rem auto 0.75rem; /* Weniger Abstand oben, normal unten */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -115,7 +123,7 @@ header {
 
 .cta-button {
   background-color: var(--neon-green);
-  color: #000000 !important; /* Wichtige Regel für schwarze Schrift */
+  color: #000000 !important;
   font-weight: bold;
   border: none;
   padding: 0.7rem 1.8rem;
@@ -124,9 +132,9 @@ header {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.3s ease;
-  font-family: "Patrick Hand SC", cursive;
+  font-family: "Knewave", sans-serif;
   border-radius: 8px;
-  box-shadow: none !important; /* Wichtige Regel um Leuchten zu deaktivieren */
+  box-shadow: none !important;
 }
 
 .cta-button:hover {
@@ -134,274 +142,184 @@ header {
   box-shadow: 0 0 10px rgba(140, 255, 0, 0.5) !important;
 }
 
-/* About-Sektion */
-.section-dark {
+/* Duell Section */
+.duell-section {
   background-color: var(--dark-bg);
   padding: var(--section-padding);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
   max-width: var(--section-max-width);
   margin: 0 auto;
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-heading {
-  font-family: "Patrick Hand SC", cursive;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--neon-green);
-  text-transform: uppercase;
-  line-height: 1.2;
-  letter-spacing: 1px;
-}
-
-.about-text p {
-  font-size: 1.2rem;
-  color: white;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  font-family: "Inter", sans-serif;
-}
-
-.article-preview {
-  flex: 1;
-  min-width: 300px;
+.duell-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 
-.scribble-box {
+.duell-heading-image {
   width: 100%;
-  height: 150px;
-  border: 2px solid var(--gray);
-  margin-bottom: 1rem;
-  position: relative;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 3rem;
+  display: block;
 }
 
-.scribble-box::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 2px;
-  background-color: var(--gray);
-  box-shadow: 0 -20px 0 var(--gray), 0 20px 0 var(--gray), 0 -40px 0 var(--gray),
-    0 40px 0 var(--gray);
-}
-
-.scribble-box::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.duell-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
   width: 100%;
-  height: 100%;
-  background-image: url("img/scribble.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.2;
 }
 
-.article-preview h3 {
-  font-family: "Inter", sans-serif;
-  font-size: 1.3rem;
+.duell-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.duell-text p {
+  font-size: 1.2rem;
   color: white;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  width: 100%;
+  line-height: 1.6;
+  font-family: "Patrick Hand", cursive;
 }
 
-.line {
-  width: 100%;
-  height: 2px;
-  background-color: var(--gray);
-  margin: 5px 0;
+.duell-image {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+  margin-top: 3rem;
 }
 
-.short {
+.duell-graphic {
   width: 80%;
+  max-width: none;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2); /* Skalierung angepasst */
 }
 
-.shorter {
-  width: 60%;
-}
-
-/* Highlights-Sektion */
-.highlights-section {
+/* Spot Section */
+.spot-section {
   background-image: url("img/grau-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #252525; /* Fallback-Farbe */
+  background-color: #252525;
   padding: var(--section-padding);
   text-align: center;
   border-top: 1px solid #222;
   border-bottom: 1px solid #222;
 }
 
-.highlights-content {
+.spot-content {
   max-width: var(--section-max-width);
   margin: 0 auto;
 }
 
-.highlight-title {
-  font-family: "Patrick Hand SC", cursive;
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-  color: var(--neon-pink);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.spot-title-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto 5rem;
+  display: block;
 }
 
-.card-grid {
+.spot-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 10rem;
   margin: 0 auto;
 }
 
-.card {
+.spot-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4rem;
 }
 
-.card .scribble-box {
-  height: 120px;
-}
-
-.card h3 {
-  font-size: 1.2rem;
-  margin: 1rem 0 0.5rem;
-  color: white;
-  text-transform: uppercase;
-  font-family: "Inter", sans-serif;
-}
-
-/* Team-Sektion */
-.team {
-  align-items: center;
-}
-
-.team-info {
-  flex: 1;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  min-width: 300px;
-}
-
-.team-image-container {
-  flex: 1;
-  min-width: 150px;
-}
-
-.team-image {
+.spot-image {
   width: 100%;
-  padding-bottom: 130%;
-  border: 2px solid var(--gray);
-  position: relative;
-}
-
-.team-image::before {
-  content: "";
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 30%;
-  border-radius: 50%;
-  border: 2px solid var(--gray);
-}
-
-.team-image::after {
-  content: "";
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 2px;
-  background-color: var(--gray);
-  box-shadow: 0 10px 0 var(--gray), 0 20px 0 var(--gray), 0 30px 0 var(--gray);
-}
-
-.team-quote {
-  flex: 1;
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  color: white;
-  font-style: italic;
-}
-
-.newsletter {
-  flex: 1;
-  min-width: 300px;
-}
-
-.team-heading {
-  font-family: "Patrick Hand SC", cursive;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--neon-green);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.newsletter-text {
-  font-size: 1.2rem;
-  color: white;
-  margin-bottom: 2rem;
-  line-height: 1.4;
-  font-family: "Inter", sans-serif;
-}
-
-.input-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.icon-circle {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--gray);
-  border-radius: 50%;
+  max-width: 280px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.newsletter-box {
+.spot-text {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  font-family: "Patrick Hand", cursive;
+  line-height: 1.4;
+}
+
+/* Ausgabe2 Section */
+.ausgabe2-section {
+  background-color: var(--dark-bg);
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.ausgabe2-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ausgabe2-heading {
+  font-family: "Knewave", cursive;
+  font-size: 2.5rem;
+  color: var(--neon-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ausgabe2-text {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.4;
+  font-family: "Patrick Hand", sans-serif;
+  text-align: center;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.email-input {
   width: 100%;
   height: 40px;
   border: 2px solid var(--gray);
-  margin-bottom: 1rem;
+  background-color: transparent;
+  color: white;
+  padding: 0 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
-.signup-button {
+.email-input::placeholder {
+  color: var(--gray);
+}
+
+.order-button {
   background-color: var(--neon-green);
-  color: #000000 !important; /* Wichtige Regel für schwarze Schrift */
+  color: #000000 !important;
   font-weight: bold;
   border: none;
   padding: 0.7rem 2rem;
@@ -409,13 +327,13 @@ header {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  align-self: center;
-  font-family: "Patrick Hand SC", cursive;
+  font-family: "Knewave", sans-serif;
   border-radius: 8px;
-  box-shadow: none !important; /* Wichtige Regel um Leuchten zu deaktivieren */
+  box-shadow: none !important;
+  transition: transform 0.3s ease;
 }
 
-.signup-button:hover {
+.order-button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(140, 255, 0, 0.5) !important;
 }
@@ -458,61 +376,43 @@ footer {
   }
 }
 
-/* Elemente flackern */
-.team-heading,
-.highlight-title,
-.about-heading {
+.ausgabe2-heading {
   animation: textFlicker 5s ease-in-out infinite;
 }
 
-/* Patrick Hand SC für Überschriften */
-.about-heading,
-.highlight-title,
-.team-heading {
-  font-family: "Patrick Hand SC", cursive;
-  letter-spacing: 1px;
-}
-
-/* Inter für Fließtexte */
-p,
-.card h3,
-.team-quote,
-.newsletter-text,
-footer {
-  font-family: "Inter", sans-serif;
+.duell-heading-image,
+.spot-title-image {
+  animation: textFlicker 5s ease-in-out infinite;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .section-dark,
-  .team {
+  .duell-main {
     flex-direction: column;
   }
 
-  .about-heading,
-  .highlight-title,
-  .team-heading {
+  .ausgabe2-heading {
     font-size: 2rem;
   }
 
-  .team-info {
-    flex-direction: column;
-    text-align: center;
+  .duell-heading-image,
+  .spot-title-image {
+    max-width: 300px;
   }
 
-  .team-image-container {
-    max-width: 200px;
+  .duell-image {
+    max-width: 300px;
     margin: 0 auto;
   }
 
-  .fist-icon {
-    display: none;
+  .duell-graphic {
+    transform: scale(1);
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --section-padding: 2rem 1rem; /* Mobile */
+    --section-padding: 2rem 1rem;
   }
 
   .subline {
@@ -523,29 +423,40 @@ footer {
     font-size: 1rem;
     padding: 0.7rem 1.5rem;
   }
+
+  .duell-heading-image,
+  .spot-title-image {
+    max-width: 250px;
+  }
 }
 
+/* Button Spezifität */
 html body header .cta-container .cta-button,
-html body section .input-row .signup-button,
+html body section .email-form .order-button,
 .cta-button,
-.signup-button,
+.order-button,
 button.cta-button,
-button.signup-button {
+button.order-button {
   background-color: var(--neon-green);
   color: #000000 !important;
   font-weight: bold;
   border: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: "Patrick Hand SC", cursive;
+  font-family: "Knewave", sans-serif;
   border-radius: 8px;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
 .cta-button *,
-.signup-button *,
+.order-button *,
 .cta-button span,
-.signup-button span {
+.order-button span {
   color: #000000 !important;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
